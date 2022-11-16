@@ -2,6 +2,22 @@
   <v-container>
     <v-row>
       <v-col>
+        <v-alert
+          :value="alert"
+          color="pink"
+          dark
+          border="top"
+          icon="mdi-home"
+          transition="scale-transition"
+        >
+          Phasellus tempus. Fusce ac felis sit amet ligula pharetra condimentum. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Pellentesque posuere. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo.
+    
+          Phasellus nec sem in justo pellentesque facilisis. Phasellus magna. Cras risus ipsum, faucibus ut, ullamcorper id, varius ac, leo. In hac habitasse platea dictumst. Praesent turpis.
+        </v-alert>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <v-card
           class="mx-auto"
           max-width="400"
@@ -28,6 +44,7 @@
             <v-btn
               color="orange"
               text
+              @click="alert = !alert"
             >
               Iniciar
             </v-btn>
@@ -53,6 +70,7 @@
     name: 'HelloWorld',
 
     data: () => ({
+      alert: false,
       ecosystem: [
         {
           text: 'vuetify-loader',
