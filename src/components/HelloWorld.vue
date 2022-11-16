@@ -2,14 +2,47 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
+        <v-card
+          class="mx-auto"
+          max-width="400"
+        >
+          <v-img
+            class="white--text align-end"
+                contain
+                height="200"
+      
+            :src="require('../assets/logo.svg')"
+          >
+            <v-card-title>Trabajando con vuetify</v-card-title>
+          </v-img>
+      
+          <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+      
+          <v-card-text class="text--primary">
+            <div>Vuetify para Vue2</div>
+      
+            <div>No disponible para vue3</div>
+          </v-card-text>
+      
+          <v-card-actions>
+            <v-btn
+              color="orange"
+              text
+            >
+              Iniciar
+            </v-btn>
+      
+            <v-btn
+              color="orange"
+              text
+            >
+              Continuar
+            </v-btn>
+          </v-card-actions>
+        </v-card>
       </v-col>
-    </v-row>
+      <template>
+</template>    </v-row>
     <v-row class="text-center">
     </v-row>
   </v-container>
