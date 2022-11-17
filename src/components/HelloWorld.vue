@@ -25,36 +25,41 @@
           <v-img
             class="white--text align-end"
                 contain
-                height="200"
+                height="100"
       
             :src="require('../assets/logo.svg')"
           >
-            <v-card-title>Trabajando con vuetify</v-card-title>
           </v-img>
-      
-          <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-      
-          <v-card-text class="text--primary">
-            <div>Vuetify para Vue2</div>
-      
-            <div>No disponible para vue3</div>
+          <v-card-text>
+            <v-form>
+              <v-row justify="center">
+                <v-col cols="12" sm="6" md="10">
+                  <v-text-field label="Email" placeholder="Email"></v-text-field>
+                  <v-text-field label="Password" placeholder="Password"></v-text-field>
+                </v-col>
+              </v-row>
+            </v-form>
           </v-card-text>
-      
           <v-card-actions>
-            <v-btn
-              color="orange"
-              text
-              @click="alert = !alert"
-            >
-              Iniciar
-            </v-btn>
-      
-            <v-btn
-              color="orange"
-              text
-            >
-              Continuar
-            </v-btn>
+            <v-row justify="center">
+              <v-col>
+                <v-btn
+                  color="orange"
+                  text
+                  @click="alert = !alert"
+                >
+                  Iniciar sesión
+                </v-btn>
+          
+                <v-btn
+                  color="orange"
+                  text
+                >
+                  Registrarse
+                </v-btn>
+
+              </v-col>
+            </v-row>
           </v-card-actions>
         </v-card>
       </v-col>
