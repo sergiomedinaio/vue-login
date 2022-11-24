@@ -75,6 +75,7 @@ export default {
       }
       if(!this.mensajeAlert) {
         this.success = true;
+        this.$router.push("/dashboard");
       }
       setTimeout(()=> {
         this.success = false;
