@@ -75,6 +75,7 @@ export default {
       }
       if(!this.mensajeAlert) {
         this.success = true;
+        localStorage.setItem("login", "true");
         this.$router.push("/dashboard");
       }
       setTimeout(()=> {
