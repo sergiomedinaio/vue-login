@@ -9,6 +9,9 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "firebase/app";
   import { getAuth, signOut  } from "firebase/auth";
+  import { getFirestore, doc, getDoc} from "firebase/firestore";
+
+
 
   //import { getAnalytics } from "firebase/analytics";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -28,8 +31,9 @@
 
   // Initialize Firebase
   const firebaseApp = initializeApp(firebaseConfig);
-  console.log(firebaseApp);
+  //console.log(firebaseApp);
   const auth = getAuth(firebaseApp);
+  const db = getFirestore(firebaseApp);
 
   //const analytics = getAnalytics(app);
 
@@ -38,7 +42,17 @@
     name: 'about-view',
     components: {
     },
-    mounted: function(){
+    mounted: async function(){
+      console.log(auth.currentUser.uid);
+      const docRef = doc(db, "users", auth.currentUser.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+
       const login = JSON.parse(localStorage.getItem("login"));
       if(login) {
         console.log("fue logueado");
