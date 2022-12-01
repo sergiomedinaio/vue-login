@@ -8,7 +8,7 @@
   <script>
 
   export default {
-    name: 'about',
+    name: 'about-view',
     components: {
     },
     mounted: function(){
